@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Students</title>
+</head>
+
+<body>
+    <input type="text" id="addName" placeholder="Enter Name to Add">
+
+    <div id="container"></div>
+</body>
+<script src="solution2.js"></script>
+
+<!-- <script>
+    let container = document.querySelector("#container")
+
+    let addName = document.querySelector("#addName");
+    addName.addEventListener("change", function (event) {
+        let newName = event.target.value;
+        students.push({ id: students.length + 1, name: newName });
+        appendNode(students.map(student => ({ id: student.id, name: student.name })));
+    })
+
+    let generateList = function (listItems) {
+        return listItems
+            .map(listItem => `<li>  ${listItem.name}  <a class="deleteName" id=${listItem.id} > x</a> </li>`)
+            .join(' ');
+    }
+
+    let appendNode = function (List) {
+        container.innerHTML = `<ul> <h2>List of Students in course</h2> <br/> ${generateList(List)}</ul>`
+        // deleteName;
+    }
+
+    appendNode(students.map(student => ({ id: student.id, name: student.name })));
+
+    let deleteName = document.querySelector(".deleteName");
+
+    deleteName.addEventListener("click", function () {
+        console.log(event);
+        console.log(event.target.id);
+        students.splice(event.target.id, 1);
+        appendNode(students.map(student => ({ id: student.id, name: student.name })));
+    })
+
+</script> -->
+
+</html>

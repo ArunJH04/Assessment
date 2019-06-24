@@ -63,10 +63,10 @@ class Courses extends React.Component {
   render() {
     return (
       <div>
-        {this.props.data.length > 0 ? (
+        {this.props.courses.length > 0 ? (
           <BrowserRouter>
             <div className="row">
-              {this.props.data.map(course => (
+              {this.props.courses.map(course => (
                 <div className="col-3" key={course.id}>
                   <div className="card" style={{ width: 10 + 'rem' }}>
                     <img src={course.imgURL} className="card-img-top" alt="..." />
@@ -84,9 +84,23 @@ class Courses extends React.Component {
                     >
                       Course Details
                     </a> */}
-                      <NavLink className="btn btn-primary" exact to={`/courses/${course.id}`}>
-                        Details
-                      </NavLink>
+                      <div>
+                        {' '}
+                        <NavLink className="btn btn-primary" exact to={`/courses/${course.id}`}>
+                          Details
+                        </NavLink>
+                      </div>
+                    </div>
+                    <div>
+                      <button
+                        onClick={() => {
+                          console.log(course.id);
+                          this.props.removeCourse(course);
+                        }}
+                        className="btn btn-primary"
+                      >
+                        Delete
+                      </button>
                     </div>
                   </div>
                 </div>

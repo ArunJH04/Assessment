@@ -19,21 +19,23 @@ export class AddCourse extends React.Component {
   }
 
   handleSubmit(event) {
-    let data = [
-      {
-        name: this.state.courseName,
-        price: this.state.coursePrice,
-        duration: this.state.courseDuration
-      }
-    ];
+    let data = {
+      id: this.props.courses.length + 1,
+      name: this.state.courseName,
+      price: this.state.coursePrice,
+      duration: this.state.courseDuration
+    };
     event.preventDefault();
-
-    const promise = axios.post('http://my-json-server.typicode.com/ArunJH04/ecommerce/courses', {
-      method: 'POST',
-      body: data
-    });
-    promise.then(response => response.data);
     console.log(data);
+
+    this.props.addCourse(data);
+
+    // const promise = axios.post('http://my-json-server.typicode.com/ArunJH04/ecommerce/courses', {
+    //   method: 'POST',
+    //   body: data
+    // });
+    // promise.then(response => response.data);
+    // console.log(data);
   }
 
   handleNameChange(event) {
